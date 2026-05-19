@@ -247,9 +247,44 @@ print(my_list)
 
 
 
+#calculate the sum of all elements in the list
 my_list=[10,20,30,40,50,60,70,80,90,100]
 
 sum=0
 for i in my_list:
     sum=sum+i
 print("The sum is: ",sum)
+
+
+variable1 = 1
+variable2 = 2
+print("variable1: ",variable1)
+print("variable2: ",variable2)
+
+#swap the values
+
+variable1 = 1
+variable2 = 2
+variable1,variable2 = variable2,variable1
+print("variable1: ",variable1)
+print("variable2: ",variable2)
+
+
+list=[10,20,30,40,50,60,70,80,90,100]
+list[4],list[1]=list[1],list[4]
+print(list)
+
+
+
+
+lst=[1,2,3,4,5]
+lst_2=[]
+add=0
+for number in lst:
+    add += number
+    lst_2.append(add)
+print(lst_2)
+print(lst)
+
+
+print("Testing commit changes")
