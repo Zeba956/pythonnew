@@ -288,3 +288,28 @@ print(lst)
 
 
 print("Testing commit changes")
+
+
+
+#bubble sort
+
+my_list=[8,10,6,2,4]
+swapped = True
+count = 0
+index=0
+while swapped:
+    swapped = False
+    for i in range(len(my_list)-1-index):
+        index = i
+        count += 1
+        if my_list[i] > my_list[i+1]:
+            swapped = True
+            my_list[i],my_list[i+1] = my_list[i+1],my_list[i]
+print(my_list)
+print(count)
+
+
+#built in sort function
+my_list=[8,10,6,2,4]
+my_list.sort()
+print(my_list)
