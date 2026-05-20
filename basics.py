@@ -313,3 +313,43 @@ print(count)
 my_list=[8,10,6,2,4]
 my_list.sort()
 print(my_list)
+
+
+
+my_list.reverse()#reverse the list
+print(my_list)
+
+list_1=[1]
+list_2=list_1[:]#create a copy of list_1
+list_1[0]=2
+print(list_2)
+print(list_1)
+
+
+
+my_list=[1,2,3,4,5]
+new_list=my_list[1:3]
+#new_list=my_list[-1:1]
+#new_list=my_list[1:-1]
+#new_list=my_list[-5:3]
+#new_list=my_list[:3]
+#new_list=my_list[2:]
+print(new_list) 
+
+del my_list[1:3] #delete elements from index 1 to 2
+print(my_list)
+
+#del my_list #delete the entire list
+
+del my_list[:] #delete all elements in the list
+print(my_list)
+
+
+
+my_list=[0,3,12,8,2]
+print(5 in my_list)
+print(3 in my_list) 
+print(5 not in my_list) 
+
+
+
