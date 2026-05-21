@@ -353,3 +353,112 @@ print(5 not in my_list)
 
 
 
+#selection sort
+my_list = [8, 10, 6, 2, 4]
+n=len(my_list)
+count=0
+for i in range(n):
+    min_index=i
+    count += 1
+
+    for j in range(i+1,n):
+        if my_list[j]<my_list[min_index]:
+            min_index=j
+
+    my_list[i],my_list[min_index]=my_list[min_index],my_list[i]
+print(my_list)
+print(count)
+
+#list comprehension
+
+# row=[]
+# for i in range(8):
+#     row.append("WHITE_PAWN")
+row=["WHITE_PAWN" for i in range(8)] 
+print(row)
+
+squares=[x**2 for x in range(10)]
+print(squares)
+
+squares=[index ** 2 for index in range(1,11)]
+odds=[x for x in squares if x % 2!=0]
+print(odds)
+
+
+#two dimensional list
+board=[]
+for i in range(8):
+    row=["EMPTY"for i in range(8)]
+    board.append(row)
+#print(board)
+
+for index in board:
+    print(index)
+print(len(board))
+
+board[0][0]= "Rook"
+board[0][7]= "Rook"
+board[7][0]= "Rook"
+board[7][7]= "Rook"
+board[0][1]= "Knight"
+board[0][6]= "Knight"
+board[7][1]= "Knight"
+board[7][6]= "Knight"
+
+
+for index in board:
+    print(index)
+
+#multidimensional list comprehension
+
+temps=[[0.0 for h in range(24)] for d in range(31)]
+
+temp1=19
+temp2=32
+count=0
+for days in temps:
+    if count == 0:
+        days[11]=temp1
+        count=1
+    else:
+        days[11]=temp2
+        count=0
+
+    
+for element in temps:
+    print (element)
+
+total = 0.0
+for day in temps:
+    total += day[11]
+average = total/31
+print("Average temperature at noon: ",average)
+
+
+highest = -100.0
+for day in temps:
+    for temp in day:
+        if temp > highest:
+            highest = temp
+print("Highest temperature: ", highest)
+
+
+hot_days = 0
+for days in temps:
+    if day[11] > 20.0:
+        hot_days +=1
+print(hot_days, "days were hot days in the month.")
+
+#question 2 3D list comprehension
+rooms=[[[False for r in range(20)]for f in range(15)] for t in range(3)]
+print(rooms)
+rooms[1][9][13]=True
+rooms[1][9][1]=True
+
+vacancy = 0
+for room_number in range(20):
+    if not rooms[1][9][room_number]:
+        vacancy += 1
+print("vacancy in 3rd 15th floor of 3rd building: ", vacancy)
+
+
