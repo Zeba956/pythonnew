@@ -476,3 +476,166 @@ c=a&b
 d=a|b
 e=a^b
 print(c+d+e)
+
+
+
+
+
+#function
+
+def message():
+    print("Enter the value: ")
+print("Step 1")
+
+message() #call the function
+a=int(input())
+print("Step 2")
+
+message()
+b=int(input())
+print("Step 3")
+
+message()
+c=int(input())
+
+
+
+
+
+def message():
+    print("Enter the value: ")
+
+#message=1
+print("We start here.")
+print(message)
+message()
+print("We end here.")
+
+
+#function with return value
+def message():
+    print("Enter the value: ")
+    temp=int(input())
+    return temp
+
+print("Step 1")
+a=message() 
+
+print("Step 2")
+b=message()
+
+print("Step 3")
+c=message()
+
+print("a: ",a )
+print("b: ",b )
+print("c: ",c )
+
+
+
+def hello(n):#defining a function 
+    print("Hello,", n)#body of the function
+
+name = input("Enter your name: ")
+hello(name)#call the function with argument name
+
+
+
+
+def message(number):
+    print("Enter a number:",number)
+
+number=1234
+message(1)
+print(number)
+
+
+
+def message(what, number):
+    print("Enter", what, "number", number)
+
+message("telephone",11)
+message(11,"telephone")#this will not give error but it will print the arguments in the order they are passed in the function call.
+message("price",5)
+message("number","number")
+
+
+
+
+def introduction(first_name,last_name):
+    print("Hello, my name is" , first_name, last_name)
+
+introduction("Luke", "Skywalker")
+introduction("Jesse","Quick")
+introduction("Clark","Kent")
+
+
+introduction(last_name="Bond", first_name="James")#keyword arguments
+introduction(first_name="Luke", last_name="Skywalker")
+
+
+
+def adding(a,b,c):
+    print(a,"+",b,"+",c,"=",a+b+c)
+
+adding(1,2,3)
+adding(c=1,b=2,a=3)
+adding(3,c=1,b=2)
+adding(3,a=1,b=2)#this will give error because positional argument a is passed after keyword argument c and b. positional arguments should be passed before keyword arguments.
+
+
+def happy_new_year(wishes=True):
+    print("Three..")
+    print("Two..")
+    print("One..")
+    if not wishes:
+        return
+    print("Happy New Year!")
+
+happy_new_year()#this will print the countdown and the message "Happy New Year!"
+happy_new_year(wishes=False)#this will print the countdown but not the message "Happy New Year!" because the function will return before printing the message.
+
+
+
+def boring_function():
+    print(" 'Boredom Mode' ON")
+    return 123
+print("this lesson is interesting!")
+boring_function()
+print("This lesson is boring...")
+
+
+
+def checkMyVar(variable):
+    if(variable==10):
+        print("variable is 10")
+        return 2
+    else:
+        print("variable is not up to the mark")
+        return
+
+checkMyVar(10)
+print()
+
+print(checkMyVar(5))#it print false bcz function is print inside the function and it return None if the condition is not satisfied. so it will print None when we call the function with argument 5.
+
+
+
+def list_sum(lst):
+    s=0
+    for element in lst:
+        s += element    
+    return s
+print(list_sum([5,4,3]))
+
+
+
+def strange_list_fun(n):
+    strange_list=[]
+
+    for i in range(0,n):
+        #strange_list.insert(0,i+1)
+        strange_list.append(i+1)
+
+    return strange_list
+print(strange_list_fun(5))
