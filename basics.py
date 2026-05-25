@@ -462,3 +462,17 @@ for room_number in range(20):
 print("vacancy in 3rd 15th floor of 3rd building: ", vacancy)
 
 
+#left shift operator
+var=1
+while var<10:
+    print("#")
+    var = var << 1
+
+
+
+a=1
+b=0
+c=a&b
+d=a|b
+e=a^b
+print(c+d+e)
