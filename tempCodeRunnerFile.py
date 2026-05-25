@@ -1,17 +1,9 @@
+def strange_list_fun(n):
+    strange_list=[]
 
+    for i in range(0,n):
+        #strange_list.insert(0,i+1)
+        strange_list.append(i+1)
 
-number = 153
-
-sum = 0
-temp = number
-
-while temp > 0:
-
-    digit = temp % 10
-    sum += digit ** 3
-    temp = temp // 10
-
-if sum == number:
-    print("Armstrong Number")
-else:
-    print("Not Armstrong")
+    return strange_list
+print(strange_list_fun(5))
