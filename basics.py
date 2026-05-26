@@ -640,6 +640,40 @@ def strange_list_fun(n):
     return strange_list
 print(strange_list_fun(5))
 
-print("hello")
 
-print("hi")
+
+def scope_test():
+    x=123
+scope_test()
+print(x)#x is not define so the output will be error
+
+
+def my_function():
+    print("Do I know that variable?",var)
+
+var=1
+my_function()
+print(var)
+
+
+#shadow variable
+
+def mult(x):
+    var=7
+    return x * var
+
+var=3
+print(mult(7))
+
+
+
+def my_function():
+    global var
+    var=2
+    print("Do I Know That Variable?", var)
+
+var=1
+my_function()
+print(var)
+
+
