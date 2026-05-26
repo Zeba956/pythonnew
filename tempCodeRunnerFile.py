@@ -1,7 +1,10 @@
+my_tuple=(1,10,100)
 
-def my_function(n):
-    if n==1:
-        return
-    print(n,end=" ")
-    my_function(n-1)#recursive call
-my_function(5)
+t1= my_tuple + (1000,10000)
+t2= my_tuple * 3
+
+print(len(t2))
+print(t1)
+print(t2)
+print(10 in my_tuple)
+print(-10 not in my_tuple)

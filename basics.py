@@ -737,6 +737,41 @@ def my_function(n):
 my_function(5)
 
 
+#recursive function to count down from a number to 0
+def countDown(number):
+    print(number)
+    if number == 0:
+        return
+    else:
+        print("Going in rec: ",number)
+        countDown(number-1)
+        print("Out of rec: ",number)
+print("Starting Recursion")
+countDown(5)
+print("Recursion ended")
 
 
+
+#factorial of a number using recursion
+def factorial(n):
+    if n == 1:      # base condition
+        return 1
+    
+    return n * factorial(n - 1)
+
+print(factorial(5))
+
+
+#Tuple
+
+my_tuple=(1,10,100)
+
+t1= my_tuple + (1000,10000)
+t2= my_tuple * 3
+
+print(len(t2))
+print(t1)
+print(t2)
+print(10 in my_tuple)
+print(-10 not in my_tuple)
 
