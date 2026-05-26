@@ -641,3 +641,5 @@ def strange_list_fun(n):
 print(strange_list_fun(5))
 
 print("hello")
+
+print("hi")
