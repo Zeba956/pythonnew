@@ -1,8 +1,7 @@
-def my_function():
-    global var
-    var=2
-    print("Do I Know That Variable?", var)
 
-var=1
-my_function()
-print(var)
+def my_function(n):
+    if n==1:
+        return
+    print(n,end=" ")
+    my_function(n-1)#recursive call
+my_function(5)

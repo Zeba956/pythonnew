@@ -677,3 +677,66 @@ my_function()
 print(var)
 
 
+#global variable
+var=2
+print(var)#output:2
+
+def return_var():
+    global var
+    var=5
+    return var
+
+print(return_var())#output:5
+print(var)
+
+
+
+def my_function(n):
+    print("I got",n)
+    n+=1
+    print("I have",n)
+
+var=1
+my_function(var)
+print(var)
+
+
+#how function interacts with its arguments
+
+def my_function(my_list_1):
+    print("Print #1:", my_list_1)
+    print("Print #2:", my_list_2)
+    my_list_1=[0,1]
+    print("Print #3:", my_list_1)
+    print("Print #4:", my_list_2)
+
+my_list_2=[2,3]
+my_function(my_list_2)
+print("Print #5:", my_list_2)
+
+
+
+def my_function(my_list_1):
+    print("Print #1:", my_list_1)
+    print("Print #2:", my_list_2)
+    del my_list_1[0]#this will delete the first element of the list my_list_1 and it will also affect the list my_list_2 because both my_list_1 and my_list_2 are pointing to the same list in memory.
+    print("Print #3:", my_list_1)
+    print("Print #4:", my_list_2)
+
+my_list_2=[2,3]
+my_function(my_list_2)
+print("Print #5:", my_list_2)
+
+
+
+def my_function(n):
+    if n==0:
+        return
+    print(n,end=" ")
+    my_function(n-1)#recursive call
+my_function(5)
+
+
+
+
+
