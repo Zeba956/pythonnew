@@ -860,6 +860,57 @@ print(dictionary.keys())
 for key in dictionary.keys():
     print(key,"->", dictionary[key])
 
+print(dictionary.items())
+for key , value in dictionary.items():#this will return a list of tuples where each tuple contains a key and its corresponding value in the dictionary.
+    print(key,"->", value)
+
+
+print(dictionary.values())
+for value in dictionary.values():
+    print(value)
+
+
+#copying a dictionary
+pol_eng_dictionary={
+    "zamek":"castle",
+    "woda":"water",
+    "gleba":"soil",
+}
+print("Polish-English Dictionary: ", pol_eng_dictionary)
+copy_dictionary=pol_eng_dictionary.copy()#this will create a copy of the dictionary pol_eng_dictionary and assign it to the variable copy_dictionary.
+
+print("copy_dictionary: ",copy_dictionary)
+
+
+
+#update the dictionary
+pol_eng_dictionary["zamek"]="lock"
+item=pol_eng_dictionary["zamek"]
+print(item)
+
+
+
+phonebook={}
+print(phonebook)
+phonebook["Adam"]=5551234567#create/add a key value pair 
+print(phonebook)
+
+del phonebook["Adam"]#this will delete the key "Adam" and its corresponding value from the dictionary phonebook.
+print(phonebook)
+
+
+
+#popitem method
+
+pol_eng_dictionary={"kwist":"flower"}
+pol_eng_dictionary.update(
+    {
+        "gleba":"soil"
+    })
+print(pol_eng_dictionary)
+
+pol_eng_dictionary.popitem()#this will remove the last key value pair from the dictionary pol_eng_dictionary and return it as a tuple.
+print(pol_eng_dictionary)
 
 
 
