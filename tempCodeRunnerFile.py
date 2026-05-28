@@ -1,9 +1,27 @@
-pol_eng_dictionary={"kwist":"flower"}
-pol_eng_dictionary.update(
-    {
-        "gleba":"soil"
-    })
-print(pol_eng_dictionary)
+sd={}
 
-pol_eng_dictionary.popitem()#this will remove the last key value pair from the dictionary pol_eng_dictionary and return it as a tuple.
-print(pol_eng_dictionary)
+while True:
+    name=input("Enter Student's Name: ")
+    if name== " ":
+        break
+    score=int(input(f"Enter ${name}'s score: "))
+
+    if score not in range(1,11):
+        break
+    if name in sd:
+        sd[name] += (score, )
+    else:
+        sd[name] = (score, )
+
+# for mark in sd:
+#     print(mark)
+
+print(sd)
+
+for name,mark in sd.items():
+    sum=0
+    #print(name,"->")
+    for m in mark:
+        #print(m)
+        sum += m
+    print(name,"->",sum/len(mark))
