@@ -1,27 +1,27 @@
-sd={}
+class Student:
+    def __init__(self,name,age,gender,grade):
+        self.name = name
+        self.age = age
+        self.gender = gender
+        self.grade = grade
 
-while True:
-    name=input("Enter Student's Name: ")
-    if name== " ":
-        break
-    score=int(input(f"Enter ${name}'s score: "))
+    def printdetails(self):
+        print("Name:",self.name)
+        print("Age:",self.age)
+        print("Gender:",self.gender)
+        print("Grade:",self.grade)
 
-    if score not in range(1,11):
-        break
-    if name in sd:
-        sd[name] += (score, )
-    else:
-        sd[name] = (score, )
+Zeba = Student("Zeba Siddique", 20, "Female","10th")
+print(Zeba)
 
-# for mark in sd:
-#     print(mark)
+# Zeba.name = "Zeba Siddique"
+# Zeba.age = 20
+# Zeba.gender = "Female"
+# Zeba.grade = "10th"
 
-print(sd)
+Zeba.printdetails()
 
-for name,mark in sd.items():
-    sum=0
-    #print(name,"->")
-    for m in mark:
-        #print(m)
-        sum += m
-    print(name,"->",sum/len(mark))
+# print(Zeba.name)
+# print(Zeba.age)
+# print(Zeba.gender)
+# print(Zeba.grade)
