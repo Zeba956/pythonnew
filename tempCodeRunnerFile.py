@@ -1,27 +1,18 @@
-class Student:
-    def __init__(self,name,age,gender,grade):
-        self.name = name
-        self.age = age
-        self.gender = gender
-        self.grade = grade
+class ExampleClass:
+    def __init__(self,val=1):
+        self.first=val
+    
+    def set_second(self,val):
+        self.second=val
 
-    def printdetails(self):
-        print("Name:",self.name)
-        print("Age:",self.age)
-        print("Gender:",self.gender)
-        print("Grade:",self.grade)
+example_object_1=ExampleClass()
+example_object_2=ExampleClass(2)
+example_object_2.set_second(3)
+example_object_3=ExampleClass(4)
+example_object_3.third=5
 
-Zeba = Student("Zeba Siddique", 20, "Female","10th")
-print(Zeba)
+print(example_object_1)
 
-# Zeba.name = "Zeba Siddique"
-# Zeba.age = 20
-# Zeba.gender = "Female"
-# Zeba.grade = "10th"
-
-Zeba.printdetails()
-
-# print(Zeba.name)
-# print(Zeba.age)
-# print(Zeba.gender)
-# print(Zeba.grade)
+print(example_object_1.__dict__)
+print(example_object_2.__dict__)
+print(example_object_3.__dict__)
