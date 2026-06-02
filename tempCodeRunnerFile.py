@@ -1,7 +1,13 @@
-class Classy:
-    varia = 2
-    def method(self):
-        print(self.varia,self.var)
-obj = Classy()
-obj.var = 3
-obj.method()
+
+class Super:
+    def __init__(self):
+        self.supVar = 11
+
+class Sub(Super):
+    def __init__(self):
+        #super().__init__()#to  create inherited instance variable!
+        self.subVar = 12
+
+obj = Sub()
+print(obj.subVar)
+print(obj.supVar)

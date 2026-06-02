@@ -1046,4 +1046,68 @@ obj.method()
 
 
 
+class Star:
+    def __init__(self,name,galaxy):
+        self.name=name
+        self.galaxy=galaxy
+sun=Star("Sun","Milky Way")
+print(sun)
+
+
+class Star:
+    def __init__(self, name, galaxy):
+        self.name = name
+        self.galaxy =galaxy
+    def __str__(self):
+        return self.name + ' in ' + self.galaxy
+    
+sun = Star("Sun", "Milky Way")
+print(sun)
+
+
+
+#Inheritance
+class Vehicle:
+    pass
+
+class LandVehicle(Vehicle):
+    pass
+
+class TrackedVehicle(LandVehicle):
+    pass    
+
+for cls1 in (Vehicle, LandVehicle, TrackedVehicle):
+    for cls2 in (Vehicle, LandVehicle, TrackedVehicle):
+        print(issubclass(cls1, cls2), end="\t") #issubclass(child, parent)
+    print()
+
+
+#Inheriting Class Variables
+class Super:
+    supVar = 1
+class Sub(Super):
+    subVar = 2
+
+obj = Sub()
+print(obj.subVar)#from Sub class
+print(obj.supVar)#inherited from Super class
+
+
+
+
+#Inheriting Instance Variables
+class Super:
+    def __init__(self):
+        self.supVar = 11
+
+class Sub(Super):
+    def __init__(self):
+        super().__init__()#to  create inherited instance variable!
+        self.subVar = 12
+
+obj = Sub()
+print(obj.subVar)
+print(obj.supVar)
+
+
 
