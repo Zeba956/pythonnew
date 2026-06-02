@@ -1005,7 +1005,7 @@ Zeba.printdetails()
 # print(Zeba.grade)
 
  
-#Oops
+#Oops [01-06-2026]
 class ExampleClass:
     def __init__(self,val=1):
         self.first=val
@@ -1024,6 +1024,25 @@ print(example_object_1)
 print(example_object_1.__dict__)
 print(example_object_2.__dict__)
 print(example_object_3.__dict__)
+
+
+
+class Classy:
+    def method(self, par):
+        print("method", par)
+
+obj = Classy()
+obj.method(1)
+
+
+
+class Classy:
+    varia = 2
+    def method(self):
+        print(self.varia,self.var)
+obj = Classy()
+obj.var = 3
+obj.method()
 
 
 
