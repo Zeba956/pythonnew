@@ -1183,6 +1183,63 @@ except AttributeError:
 
 
 
+example_object = ExampleClass(1)
+
+if hasattr(example_object, 'a'):
+    print("a = ", example_object.a)
+
+if hasattr(example_object, 'b'):
+    print("b = ", example_object.b)
+
+print(hasattr(example_object, 'a'))
+print(hasattr(example_object, 'b'))
+
+
+
+
+class Python:
+    population = 1
+    victims = 0
+    def __init__(self):
+        self.length_ft = 3
+        self._venomous = False
+
+
+
+
+myObj = Python()
+print("myObj.population: ", myObj.population)
+print("myObj.victims: ", myObj.victims)
+print("myObj.length_ft: ", myObj.length_ft)
+# print("myObj._venomous: ", myObj._venomous)
+# print("myObj.venomous: ", myObj.venomous)
+
+
+
+
+
+#Name Mangling
+class Classy:
+    def visible(self):
+        print("visible")
+
+    def __hidden(self):
+        print("hidden")
+
+
+obj = Classy()
+
+obj.visible()
+
+try:
+    obj.__hidden()
+except:
+    print("failed")
+
+obj._Classy__hidden()
+
+
+
 
 
 

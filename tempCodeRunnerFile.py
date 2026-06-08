@@ -1,20 +1,18 @@
-class ExampleClass:
-    counter = 0
-    def __init__(self,val = 1):
-        ExampleClass.counter += 1
-        if val % 2 != 0:
-            self.a = val
-        else:
-            self.b = val
+class Classy:
+    def visible(self):
+        print("visible")
 
-example_object = ExampleClass(1)
-print(example_object.a)
-# print(example_object.b)
+    def __hidden(self):
+        print("hidden")
 
 
-#Exception Handling
+obj = Classy()
+
+obj.visible()
 
 try:
-    print("b = ", example_object.b)
-except AttributeError:
-    pass
+    obj.__hidden()
+except:
+    print("failed")
+
+obj._Classy__hidden()
