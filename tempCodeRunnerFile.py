@@ -1,31 +1,14 @@
-class Level1:
-    variable_1 = 100
-    def __init__(self):
-        self.var_1 = 101
-    def fun_1(self):
-        return 102
+#08-06-2026
+class ExampleClass:
+    counter = 0
+    def __init__(self,val = 1):
+        self.first = val           
+        ExampleClass.counter += 1
 
-class Level2(Level1):
-    variable_2 = 200
-    def __init__(self):
-        super().__init__()
-        self.var_2 = 201
-    def fun_2(self):
-        return 202
-    
-class Level3(Level2):
-    variable_3 = 300
-    def __init__(self):
-        super().__init__()
-        self.var_3 = 301
-    def fun_3(self):
-        return 302
-    
-obj = Level3()
-print(obj.variable_1, obj.var_1, obj.fun_1())
-print(obj.variable_2, obj.var_2, obj.fun_2())
-print(obj.variable_3, obj.var_3, obj.fun_3())
+example_object_1 = ExampleClass()
+example_object_2 = ExampleClass(2)  
+example_object_3 = ExampleClass(4)
 
-
-
-
+print(example_object_1.__dict__, example_object_1.counter)
+print(example_object_2.__dict__, example_object_2.counter)
+print(example_object_3.__dict__, example_object_3.counter)
