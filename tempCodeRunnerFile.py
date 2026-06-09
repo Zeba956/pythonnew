@@ -1,14 +1,15 @@
-#09-06-2026
-class Super:
-    def __init__(self,name):
-        self.name = name
-    def __str__(self):
-        return "My name is " + self.name + "."
+def reciprocal(n):
+    try:
+        n= 1/n
+    except ZeroDivisionError:
+        print("Division failed")
+        return None
+    else:
+        print("Everything went well")
+        return n
     
-class Sub(Super):
-    def __init__(self,name):
-        pass
-        Super.__init__(self,name)
-    
-obj = Sub("Andy")
-print(obj)
+print("---------")
+print("reciprocal(2):", reciprocal(2))
+print("---------")
+print("reciprocal(0):", reciprocal(0))
+print("---------")

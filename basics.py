@@ -1302,5 +1302,106 @@ print(obj)
 
 
 
+class SuperA:
+    var_a = 10
+    def fun_a(self):
+        return 11
+    
+class SuperB:
+    var_b = 20
+    def fun_b(self):
+        return 21
+
+class Sub(SuperA, SuperB):
+    pass
+
+obj = Sub()
+print(obj.var_a, obj.fun_a())
+print(obj.var_b, obj.fun_b())
+
+
+
+#multiple inheritance with three levels(Imp Que For Interview)
+#bottom to top approch
+class level1:
+    var = 100
+    def fun(self):
+        return 101
+    
+class level2(level1):
+    var = 200
+    def fun(self):
+        return 201
+    
+class level3(level2):
+    pass
+
+obj = level3()
+print(obj.var, obj.fun())
+
+
+
+
+class Left:
+    var = "L"
+    var_left = "LL"
+    def fun(self):
+        return "Left"
+
+class Right:
+    var = "R"
+    var_right = "RR"
+    def fun(self):
+        return "Right"
+
+class Sub(Left, Right):
+    pass
+obj = Sub()
+print(obj.var, obj.var_left, obj.var_right, obj.fun())
+
+
+
+
+#polymorphism
+class One:
+    def do_it(self):
+        print("do_it from One")
+    
+    def doanything(self):
+        self.do_it()
+
+class Two(One):
+    def do_it(self):
+        print("do_it from Two")
+
+one=One()
+two=Two()
+one.doanything()
+two.doanything()
+
+
+
+#MRO (Method Resolution Order)
+
+
+#
+def reciprocal(n):
+    try:
+        n= 1/n
+    except ZeroDivisionError:
+        print("Division failed")
+        return None
+    else:
+        print("Everything went well")
+        return n
+    
+print("---------")
+print("reciprocal(2):", reciprocal(2))
+print("---------")
+print("reciprocal(0):", reciprocal(0))
+print("---------")
+
+
+
 
 
