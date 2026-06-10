@@ -1437,3 +1437,110 @@ print(text.strip())#remove leading and trailing whitespace
 print('Python' in text)
 print(text.find('Python'))
 print(text.count('l'))
+#Replce
+print (text.replace('Python', 'AI'))
+
+#Split and Join
+csv = 'Rahul,22,Bhopal,Engineer'
+parts = csv.split(',')
+print(parts)
+print(parts[0])
+rejoined = ' | '.join(parts)
+
+#check content
+print('hello123'. isalnum())
+print('12345'. isdigit())
+print('Python'. isalpha())
+print(' '.isspace())
+
+#Start/end check
+email = 'student@gmail.com'
+print(email.endswith('.com'))
+print(email.startswith('stu'))
+
+
+
+
+
+name, marks, rank = 'Ankita', 92.567, 3
+#basic
+print(f'Hello, {name}!')
+
+#Format numbers
+print(f'Marks: {marks:.2f}')
+print(f'Marks: {marks:.0f}')
+print(f'count: {1000000}')
+
+
+#padding and alignment
+print(f'{name:<15}|{marks:>8.2f}|Rank:{rank}')
+print(f'hello {name:^10}')
+print(f'hello {name:>10}')
+print(f'hello {name:<10}')
+
+#Expression inside{}
+price,gst = 500, 0.18
+print(f'Price:Rs.{price} | GST:Rs.(price*gst:.2f) | Total:Rs.{price*(1+gst):.2f}')
+
+
+
+
+string = "Hello, How are you doing today?"
+#count vowels in the string
+#print you from the string 
+#print the string in reverse order
+non_palin, palin = "abcdef" , "axttxa"
+#check if the string is palindrome or not
+
+
+string = "Hello, How are you doing today?"
+
+# Count vowels in the string
+vowels = "aeiouAEIOU"
+count = 0
+
+for char in string:
+    if char in vowels:
+        count += 1
+
+print("Number of vowels:", count)
+
+# Print 'you' from the string
+print("Word:", string[15:18])
+
+# Print the string in reverse order
+print("Reverse String:", string[::-1])
+
+# Palindrome check
+non_palin = "abcdef"
+palin = "axttxa"
+
+if non_palin == non_palin[::-1]:
+    print(non_palin, "is a palindrome")
+else:
+    print(non_palin, "is not a palindrome")
+
+if palin == palin[::-1]:
+    print(palin, "is a palindrome")
+else:
+    print(palin, "is not a palindrome")
+
+
+
+#short answer
+string = "Hello, How are you doing today"
+count_vowel= 0
+for ch in string:
+    if ch in 'aeiouAEIOU':
+        count_vowel += 1
+print(count_vowel)
+print(string.split()[3])
+print(string[::-1])
+non_palin,palin = 'abcdef','axttxa'
+print(non_palin == non_palin[::-1])
+print(palin == palin[::-1])
+
+
+
+
+
