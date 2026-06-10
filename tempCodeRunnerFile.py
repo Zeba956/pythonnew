@@ -1,11 +1,17 @@
-string = "Hello, How are you doing today"
-count_vowel= 0
-for ch in string:
-    if ch in 'aeiouAEIOU':
-        count_vowel += 1
-print(count_vowel)
-print(string.split()[3])
-print(string[::-1])
-non_palin,palin = 'abcdef','axttxa'
-print(non_palin == non_palin[::-1])
-print(palin == palin[::-1])
+with open ('students.txt', 'w') as f:
+    f.write('Rahul Sharma,85,Bhopal\n')
+    f.write('Priya Verma,92,Indore\n')
+    f.write('Amit Kumar,73,Jabalpur\n')
+
+with open('students.txt','a') as f:
+    f.write('Sneha Joshi,88,Bhopal\n')
+
+with open('students.txt','r') as f:
+    content = f.read()
+print(content)
+
+with open('students.txt','r') as f:
+    for line in f:
+        name,marks,city = line.strip().split(',')
+        print(f'{name:<15} | {marks:>5} | {city}')
+        print("--------------")
