@@ -62,3 +62,57 @@ print(city_avg)
 df2 = pd.read_csv('students.csv')
 #cleaning
 df2.to_csv('clean_output.csv',index = False)
+
+
+
+
+#unclean data to clean data
+import csv
+
+records = [
+    ['Name','Marks','City','Grade'],
+    ['Rahul','#85','BhopalCity','B*'],
+    ['Priya','#92','IndoreDist','@A'],
+    ['Amit','#73','JabalpurCity','B']
+]
+
+with open('students.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(records)
+
+print("Unclean data created successfully!")
+
+
+
+
+
+import pandas as pd
+
+# CSV file read karo
+df = pd.read_csv("students.csv")
+
+print("Unclean Data:")
+print(df)
+
+df["Name"] = df["Name"].str
+
+
+# Marks se # remove karo
+df["Marks"] = df["Marks"].str.replace("#", "", regex=False)
+df["Marks"] = pd.to_numeric(df["Marks"])
+
+# City se City aur Dist remove karo
+df["City"] = df["City"].str.replace("City", "", regex=False)
+df["City"] = df["City"].str.replace("Dist", "", regex=False)
+
+# Grade se @ aur * remove karo
+df["Grade"] = df["Grade"].str.replace("@", "", regex=False)
+df["Grade"] = df["Grade"].str.replace("*", "", regex=False)
+
+print("\nCleaned Data:")
+print(df)
+
+# Cleaned data save karo
+df.to_csv("clean_output.csv", index=False)
+
+print("\nData cleaned and saved to clean_output.csv")
