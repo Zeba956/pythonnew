@@ -13,8 +13,7 @@ df = pd.DataFrame({
     'gender':      np.random.choice(['Male','Female'],100)
 })
 
-#Correlation Heatmap Graph_ critical in data science
-plt.figure(figsize=(5,4))
-sns.heatmap(df[['marks','study_hours']].corr(),annot=True,cmap='pink',vmin=-1,vmax=1)
-plt.title('Correlation Matrix')
+
+#Pair Plot
+sns.pairplot(df[['marks','study_hours']],diag_kind='kde')
 plt.show()
