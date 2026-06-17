@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 
 np.random.seed(42)
+
 #data
 df = pd.DataFrame({
     'marks':       np.random.randint(40,100,100),
@@ -12,7 +13,8 @@ df = pd.DataFrame({
     'gender':      np.random.choice(['Male','Female'],100)
 })
 
-sns.boxplot(data=df, x='city', y='marks', palette='Set2')
-plt.title('Marks Distribution by City')
+#Correlation Heatmap Graph_ critical in data science
+plt.figure(figsize=(5,4))
+sns.heatmap(df[['marks','study_hours']].corr(),annot=True,cmap='pink',vmin=-1,vmax=1)
+plt.title('Correlation Matrix')
 plt.show()
-
