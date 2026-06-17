@@ -1,4 +1,3 @@
-
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
@@ -13,8 +12,7 @@ df = pd.DataFrame({
     'gender':      np.random.choice(['Male','Female'],100)
 })
 
-#Histogram with KDE -- see the distribution
-plt.figure(figsize=(10,4))
-sns.histplot(df['marks'],bins=20, kde=True, color='steelblue')
-plt.title('Distribution of Student Marks')
+sns.boxplot(data=df, x='city', y='marks', palette='Set2')
+plt.title('Marks Distribution by City')
 plt.show()
+
