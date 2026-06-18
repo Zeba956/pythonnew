@@ -76,3 +76,6 @@ plt.show()
 r, p_value = stats.pearsonr(study, marks)
 print(f'Study-Marks correlation: r={r:.3f}, p={p_value:.4f}')
 print('Interpretation:','Strong positive' if r>0.7 else 'Moderate' if r>0.4 else 'Weak')
+
+
+
