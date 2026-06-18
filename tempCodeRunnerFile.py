@@ -1,22 +1,32 @@
 
 
- 
+#Correlation for Ai/Ml
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
 import numpy as np
-salaries = [22,28,35,42,38,55,48,60,72,85,30,45,52,65,28,34,41,58,75,90]
-#spred - how varied is the date?
-std = np.std(salaries)
-var = np.var(salaries)
-rng = max(salaries) - min(salaries)
-q1 = np.percentile(salaries,25)
-q3 = np.percentile(salaries,75)
-iqr = q3-q1
+from scipy import stats
 
-print(f'Std Deviation: {std:2f}K (most important spread measure)')
-print(f'IQR: {iqr}K (Q1={q1},Q3={q3})')
+#Data
+np.random.seed(42)
+study = np.random.uniform(2,10,60)
+marks = study * + np.random.normal(0,10,60)
+marks = np.clip(marks,30,100)
+absent = 10 - study + np.random.normal(0,1,60)
 
-#outlier detection using IQR (interquartile range)
+df = pd.DataFrame({'Study_Hours': study,'Marks':marks,'Absences':absent})
 
-lower = q1 - 1.5*iqr
-upper = q3 + 1.5*iqr
-outliers = [x for x in salaries if x< lower or x > upper]
-print(f'Outliers: {outliers}') 
+corr_matrix = df.corr()
+print(corr_matrix.round(3))
+
+plt.figure(figsize=(6,4))
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', vmin=-1, vmax=1, fmt='.2f')
+plt.title('Correlation Matrix');
+plt.show()
+
+
+#Pearson Correlation
+r, p_value = stats.pearsonr(study, marks)
+print(f'Study-Marks correlation: r={r:.3f}, p={p_value:.4f}')
+print('Interpretation:','Strong positive' if r>0.7 else 'Moderate' if r>0.4 else 'Weak')
