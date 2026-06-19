@@ -110,7 +110,6 @@ print(f'99.7% of people: {mean_h-3*std_h:.0f}cm to {mean_h+3*std_h:.0f}cm')
 
 
 
-
 from sklearn.model_selection import train_test_split, cross_val_score
 import numpy as np
 
@@ -135,6 +134,26 @@ cv_scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
 print(f'CV scores each fold: {cv_scores.round(3)}')
 print(f'Mean: {cv_scores.mean():.4f} ± {cv_scores.std():.4f}')
 
+
+
+
+
+
+
+
+import numpy as np 
+from scipy import stats
+import matplotlib.pyplot as plt
+
+#data
+n_A, conv_A = 1000, 52
+n_B, conv_B = 1000, 68
+rate_A = conv_A / n_A
+rate_B = conv_B / n_B
+
+print(f'Version A conversion rate: {rate_A*100:.1f}%')
+print(f'Version B conversion rate: {rate_B*100:.1f}%')
+print(f'Improvement: {(rate_B-rate_A)/rate_A*100:.1f}%')
 
 
 
