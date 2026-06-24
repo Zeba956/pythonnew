@@ -385,3 +385,4 @@ xgb = XGBClassifier(n_estimators=100, max_depth=4, learning_rate=0.1,
                     random_state=42, eval_metric='logloss', verbosity=0)
 xgb.fit(X_train,y_train)
 print(f'XGBoost Accuracy: {accuracy_score(y_test,xgb.predict(X_test))*100:.2f}%')
+
