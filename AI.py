@@ -48,3 +48,15 @@ plt.xlabel('Epoch'); plt.ylabel('Loss'); plt.show()
 print('Final predictions (should be close to [0,1,1,0]):')
 print(np.round(o,2))
 
+
+
+
+
+
+import tensorflow as tf
+from tensorflow import keras
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+
